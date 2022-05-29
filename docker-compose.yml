@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  db:
+    image: postgres
+    container_name: espeleopostgres
+    restart: always
+    environment:
+      - "POSTGRES_USER=espeleoadmin"
+      - "POSTGRES_PASSWORD=gec2022Luc1fug4"
+      - "POSTGRES_DB=espeleo_db"
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./sql:/var/lib/postgresql/data"
+volumes:
+  db:
+    driver: local
