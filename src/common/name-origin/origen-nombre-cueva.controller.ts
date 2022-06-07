@@ -1,14 +1,14 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
-import { NameOriginService } from './name-origin.service';
-import { CreateNameOriginDto } from './dto/create-name-origin.dto';
-import { UpdateNameOriginDto } from './dto/update-name-origin.dto';
+import { OrigenNombreCuevaService } from './origen-nombre-cueva.service';
+import { CreateOrigenNombreCuevaDto } from './dto/create-origen-nombre-cueva.dto';
+import { UpdateOrigenNombreCuevaDto } from './dto/update-origen-nombre-cueva.dto';
 
 @Controller('name-origin')
-export class NameOriginController {
-  constructor(private readonly nameOriginService: NameOriginService) {}
+export class OrigenNombreCuevaController {
+  constructor(private readonly nameOriginService: OrigenNombreCuevaService) {}
 
   @Post()
-  create(@Body() createNameOriginDto: CreateNameOriginDto) {
+  create(@Body() createNameOriginDto: CreateOrigenNombreCuevaDto) {
     return this.nameOriginService.create(createNameOriginDto);
   }
 
@@ -23,7 +23,7 @@ export class NameOriginController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateNameOriginDto: UpdateNameOriginDto) {
+  update(@Param('id') id: string, @Body() updateNameOriginDto: UpdateOrigenNombreCuevaDto) {
     return this.nameOriginService.update(+id, updateNameOriginDto);
   }
 

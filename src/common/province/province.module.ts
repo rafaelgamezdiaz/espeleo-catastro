@@ -7,6 +7,6 @@ import { ProvinceRepository } from './province.repository';
 @Module({
   imports: [TypeOrmModule.forFeature([ProvinceRepository])],
   controllers: [ProvinceController],
-  providers: [ProvinceService]
+  providers: [ProvinceService],
 })
 export class ProvinceModule {}

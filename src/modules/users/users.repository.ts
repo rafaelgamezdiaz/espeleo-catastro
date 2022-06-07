@@ -2,10 +2,7 @@ import { EntityRepository, Not, Repository } from 'typeorm';
 import { User } from './entities/user.entity';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UsersStatus } from './enums/users-status.enum';
-import {
-  ConflictException,
-  NotFoundException,
-} from '@nestjs/common';
+import { ConflictException, NotFoundException } from '@nestjs/common';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { AuthDto } from '../../auth/dto/auth.dto';
 

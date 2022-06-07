@@ -33,4 +33,7 @@ export class Province {
 
   @Column({ type: 'timestamptz', nullable: true })
   deletedAt: Date;
+
+  @Column({ type: 'timestamptz', nullable: true })
+  endAt: Date;
 }

@@ -1,4 +1,15 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, UseGuards } from "@nestjs/common";
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+  UseGuards,
+  UseInterceptors,
+  ClassSerializerInterceptor
+} from "@nestjs/common";
 import { ProvinceService } from './province.service';
 import { CreateProvinceDto } from './dto/create-province.dto';
 import { UpdateProvinceDto } from './dto/update-province.dto';
@@ -9,27 +20,29 @@ import { Role } from '../../modules/users/enums/roles.enum';
 import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../../auth/guards/roles.guard';
 
-@Controller('province')
+@Controller('/api/province')
+@UseInterceptors(ClassSerializerInterceptor)
 export class ProvinceController {
   constructor(private readonly provinceService: ProvinceService) {}
 
-  @Post('create')
+  @Post('/create')
   @Roles(Role.ADMIN)
   @UseGuards(JwtAuthGuard, RolesGuard)
-  async create(@Body() createProvinceDto: CreateProvinceDto, @CurrentUser() currentUser: CurrentUserInterface) {
+  async create(
+    @Body() createProvinceDto: CreateProvinceDto,
+    @CurrentUser() currentUser: CurrentUserInterface,
+  ) {
     console.log('currentUser', currentUser);
     return await this.provinceService.create(createProvinceDto, currentUser);
   }
 
   @Get('all')
-  @Roles(Role.USER)
   @UseGuards(JwtAuthGuard, RolesGuard)
   async findAll() {
     return await this.provinceService.findAll();
   }
 
   @Get(':id')
-  @Roles(Role.USER)
   @UseGuards(JwtAuthGuard, RolesGuard)
   async findOne(@Param('id') id: string) {
     return await this.provinceService.findById(+id);

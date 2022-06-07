@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
-import { CreateNameOriginDto } from './dto/create-name-origin.dto';
-import { UpdateNameOriginDto } from './dto/update-name-origin.dto';
+import { CreateOrigenNombreCuevaDto } from './dto/create-origen-nombre-cueva.dto';
+import { UpdateOrigenNombreCuevaDto } from './dto/update-origen-nombre-cueva.dto';
 
 @Injectable()
-export class NameOriginService {
-  create(createNameOriginDto: CreateNameOriginDto) {
+export class OrigenNombreCuevaService {
+  create(createOrigenNombreCuevaDto: CreateOrigenNombreCuevaDto) {
     return 'This action adds a new nameOrigin';
   }
 
@@ -16,7 +16,7 @@ export class NameOriginService {
     return `This action returns a #${id} nameOrigin`;
   }
 
-  update(id: number, updateNameOriginDto: UpdateNameOriginDto) {
+  update(id: number, updateOrigenNombreCuevaDto: UpdateOrigenNombreCuevaDto) {
     return `This action updates a #${id} nameOrigin`;
   }
 

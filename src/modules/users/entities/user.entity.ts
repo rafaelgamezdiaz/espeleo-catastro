@@ -2,7 +2,6 @@ import { BaseEntity, Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColum
 import { UsersStatus } from '../enums/users-status.enum';
 import { Role } from '../enums/roles.enum';
 import { Exclude } from 'class-transformer';
-import { Membership } from '../../../common/membership/entities/membership.entity';
 import { CaveRegister } from '../../caves/cave-register/entities/cave-register.entity';
 
 @Entity()

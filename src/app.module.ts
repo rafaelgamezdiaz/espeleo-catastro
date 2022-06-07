@@ -8,13 +8,14 @@ import { UsersModule } from './modules/users/users.module';
 import { CavesModule } from './modules/caves/caves.module';
 import { AuthModule } from './auth/auth.module';
 import { MembershipModule } from './common/membership/membership.module';
-import { NameOriginModule } from './common/name-origin/name-origin.module';
+import { OrigenNombreCuevaModule } from './common/name-origin/origen-nombre-cueva.module';
 import { TypeCaveModule } from './common/type-cave/type-cave.module';
 import { ProvinceModule } from './common/province/province.module';
 import { LocationAreaModule } from './common/location-area/location-area.module';
 import { CaveConditionsModule } from './common/cave-conditions/cave-conditions.module';
 import { TopographyMethodModule } from './common/topography-method/topography-method.module';
 import { TypeExcavationModule } from './common/type-excavation/type-excavation.module';
+import { ParametersModule } from './modules/parameters/parameters.module';
 
 @Module({
   imports: [
@@ -37,13 +38,14 @@ import { TypeExcavationModule } from './common/type-excavation/type-excavation.m
     CavesModule,
     AuthModule,
     MembershipModule,
-    NameOriginModule,
+    OrigenNombreCuevaModule,
     TypeCaveModule,
     ProvinceModule,
     LocationAreaModule,
     CaveConditionsModule,
     TopographyMethodModule,
     TypeExcavationModule,
+    ParametersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
